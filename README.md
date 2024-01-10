@@ -26,4 +26,4 @@
 4. Inicia la aplicación Angular con `ng serve`.
 5. ¡Explora las emocionantes estadísticas de la NBA!
 
-## ¡Diviértete explorando las estadísticas de la NBA! 🏀
+# ¡Diviértete explorando las estadísticas de la NBA! 🏀
