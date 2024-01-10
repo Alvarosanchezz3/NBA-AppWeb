@@ -1,0 +1,332 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    width: 100%;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(248, 248, 248);
+    border-bottom: 1px solid rgb(236, 236, 236);
+}
+
+.icons {
+    width: 30px; 
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 10px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgb(85, 84, 84);
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.nav-links li a:hover.disabled {
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    cursor: pointer;
+}
+
+.logo {
+    width: 220px;
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 25px;
+    padding: 10px 90px 10px 10px;
+    margin-bottom: 40px;
+}
+
+.buscador input {
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+.buscador img {
+    width: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.buscador img.disabled {
+    cursor: not-allowed;
+}
+.mobile2, .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    border: 2px solid rgb(167, 167, 167);
+    margin-right: 10px;
+    padding: 5px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .search-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .search img {
+    width: 35px;
+    cursor: pointer;
+    transition: padding-right 0.5s ease, transform 0.5s ease; 
+  }
+
+   .search img:hover.disabled {
+    cursor: not-allowed;
+  }
+
+  .search-input {
+    position: relative;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-weight: bold;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    width: 0;
+    transition: width 1s;
+  }
+  
+  .search.active .search-img {
+    transform: scale(1.2);
+    padding-right: 5px;
+  }
+  
+  .search.active .search-input {
+    width: 200px;
+  }
+
+  .mobile2 a:hover.disabled {
+    cursor: not-allowed;
+  }
+  
+
+@media only screen and (max-width: 2320px) {
+    .team-icons {
+        gap: 2.5rem;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 2080px) {
+    .team-icons {
+        gap: 2rem;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 2080px) {
+    .team-icons {
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width: 1920px) {
+    .team-icons {
+        gap: 1.8rem;
+        padding: 10px;
+    }
+
+    .icons {
+        width: 31px;
+    }
+    
+    .nav-links a img {
+        width: 170px;
+    }
+
+    .nav-links li a {
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 160px;
+    }
+
+    .nav-links li a {
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (max-width:1538px) {
+    .nav-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 400px;
+        top: 263px;
+        right: 0;
+        gap: 0;
+        border-radius: 5px;
+        position: absolute; 
+        background-color: rgb(44, 44, 44);
+        z-index: 1000;
+    }
+
+    .nav-links.show {
+        display: flex; /* Muestra la lista de navegación cuando se hace clic en el botón de hamburguesa */
+    }
+
+    .nav-links .logo {
+        display: none;
+    }
+
+    .nav-links li {
+        width: 100%;
+        padding: 25px;
+        border: 1px solid #ffffff1f;
+    }
+
+    .nav-links li a {
+        color: #fff;
+    }
+
+    .nav-links li a:hover {
+        text-decoration: underline;
+        text-decoration-line: 0.5;
+    }
+
+    .logo {
+        margin-left: 30px;
+        width: 130px;
+        cursor: pointer;
+    }
+
+    .mobile-menu {
+        width: 100%;
+        display: flex; /* Muestra el botón de hamburguesa */
+        align-items: center;
+        justify-content: space-between;
+        font-size: 45px;
+        padding: 10px;
+    }
+
+    .mobile-menu a {
+        margin-right: 40px;
+        cursor: pointer;
+    }
+
+    .buscador {
+        display: none;
+    }
+}
+
+/* Media query para pantallas pequeñas, como dispositivos móviles */
+@media only screen and (max-width: 933px) {
+    .team-icons {
+        display: none; /* Oculta los íconos de equipo en pantallas pequeñas */
+    }
+
+    .mobile-menu {
+        display: flex; /* Muestra el botón de hamburguesa */
+        align-items: center;
+        font-size: 40px;
+        cursor: pointer;
+        order: 1; /* Cambia el orden para colocar el botón de hamburguesa al final del contenedor */
+    }
+
+    .logo {
+        width: 150px;
+        margin-right: 60px;
+    }
+
+    .nav-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 400px;
+        top: 124px;
+        right: 0;
+        gap: 0;
+        border-radius: 5px;
+        position: absolute; 
+        background-color: rgb(44, 44, 44);
+        z-index: 1000;
+    }
+
+    .nav-links.show {
+        display: flex; /* Muestra la lista de navegación cuando se hace clic en el botón de hamburguesa */
+    }
+
+    .nav-links .logo {
+        display: none;
+    }
+
+    .nav-links li {
+        width: 100%;
+        padding: 25px;
+        border: 1px solid #ffffff1f;
+    }
+
+    .nav-links li a {
+        color: #fff;
+    }
+
+    .nav-links li a:hover {
+        text-decoration: underline;
+        text-decoration-line: 0.5;
+    }
+}

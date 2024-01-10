@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .container-home {
+    position: relative;
+    overflow-y: hidden; 
+    height: 100vh; 
+  }
+  
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(10, 0, 0, 1); /* Ajusta el valor de desenfoque y opacidad según tus preferencias */
+  }
+  
+  .blurred-image img {
+    filter: blur(10px); /* O el valor que desees */
+    transition: filter 0.5s ease; /* Agrega una transición suave para suavizar el efecto */
+}
+
+  .content {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+  }
+  
+  .content .titulo {
+    font-size: 55px;
+    margin-bottom: 50px;
+    width: 100px;
+  }
+  
+  .content .subtitulo {
+    font-size: 0.8em;  
+    color: #ffffffd7;  
+  }
+
+  .content a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.384);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .content a:hover {
+    font-weight: bolder;
+    border: 2px solid rgba(255, 255, 255, 0.856);
+  }
+  
+  /* Agrega estilos adicionales según tus necesidades */
+  
+@media only screen and (max-width: 1920px) {
+    
+  .content .titulo {
+    font-size: 45px;
+    margin-bottom: 50px;
+    width: 1000px;
+  }
+    
+  .content a {
+    font-size: 20px;
+  }
+}
+
+/* Media query para dispositivos con un ancho máximo de 768px */
+@media only screen and (max-width: 768px) {
+    
+  .content .titulo {
+    font-size: 26px;
+    width: 500px;
+  }
+  
+  .content a {
+    font-size: 20px;
+  }
+
+  .banner img {
+    margin-top: 15px;
+  }
+}

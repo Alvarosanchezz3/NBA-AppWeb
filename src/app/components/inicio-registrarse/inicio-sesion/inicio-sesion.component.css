@@ -1,0 +1,258 @@
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.fondo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.volver {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.4745098039);
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.volver:hover {
+  background-color: #ffffff36;
+}
+
+.volver img{
+  width: 40px;
+  margin-right: 10px;
+}
+
+.login {
+  position: relative;
+  width: 450px;
+  background: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.4745098039);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(50px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+  .login .inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .login .inicio h1 {
+    font-size: 38px;
+    text-align: center;
+    color: #fff;
+    padding: 5px;
+    font-size: 42px;
+  }
+
+  .login .input-box {
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    position: relative;
+    align-items: center;
+  }
+
+  .login .input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4745098039);
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .login .input-box input::-moz-placeholder {
+    color: #fff;
+  }
+
+  .login .input-box input::placeholder {
+    color: #fff;
+  }
+
+  .login .input-box img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 33px;
+  }
+
+  .login .error {
+    border-radius: 5px;
+    padding: 5px;
+    width: auto;
+    color: #fff;
+    width: 330px;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    background-color: #fff;
+    color: #dc2626;
+  }
+
+  .login .error img {
+    width: 35px;
+    margin-right: 5px;
+  }
+
+  .login .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: 10px 0 15px;
+  }
+
+  .login .remember-forgot label {
+    color: #fff;
+  }
+
+  .login .remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 5px;
+  }
+
+  .login .remember-forgot a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bolder;
+  }
+
+  .login .remember-forgot a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+  }
+
+  .login button {
+    width: 100%;
+    height: 45px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    color: #4F4F4F;
+    background: #fff;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  .login button:hover {
+    background: rgba(255, 255, 255, 0.8156862745);
+  }
+
+  .login .registrer-link {
+    font-size: 14.5px;
+    text-align: center;
+    color: #fff;
+    margin: 0px 0px 15px 0px;
+    
+  }
+  .login .registrer-link a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  .login .registrer-link a:hover {
+    text-decoration: underline;
+  }
+
+  .textos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.5rem;
+  }
+
+  .textos a {
+    color: #fff;
+    font-weight: bolder;
+    text-decoration: none;
+  }
+
+  .textos a:hover {
+    color: #fff;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+  }
+
+  .login .other-logs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .login .other-logs a {
+    width: 90%;
+    height: 45px;
+    border: 2px solid rgba(255, 255, 255, 0.4745098039);
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  .login .other-logs a img {
+    margin-right: 8px;
+    width: 30px;
+  }
+  .login .other-logs a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+
+  @media only screen and (max-width: 1920px) {
+    
+    .login {
+      width: 420px;
+    }
+
+    .login .other-logs {
+      margin-bottom: 5px;
+    }
+    
+    .login .inicio {
+      margin-top: 0px;
+    }
+
+    .volver {
+      font-size: 16px;
+      padding: 5px;
+    }
+
+    .volver img {
+      width: 35px;
+    }
+}

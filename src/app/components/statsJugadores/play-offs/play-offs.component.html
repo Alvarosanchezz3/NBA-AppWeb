@@ -1,0 +1,28 @@
+<app-header></app-header>
+<h1 class="title">Estadísticas PlayOffs</h1>
+<div class="container-cards"> 
+    <div class="slider-container">
+        
+        <div class="card-slider" [style.transform]="'translateX(' + currentSlideIndex * -100 + '%)'">
+            <div *ngFor="let type of scorerSeasons" class="card">
+                <h3>{{ type.name }} 🏀</h3>
+                <p>{{ type.season }}</p>
+            </div>
+        </div>
+    </div>
+    <button (click)="prevSlideScorer()" class="btn-slide left-scorer"><</button>
+    <button (click)="nextSlideScorer()" class="btn-slide right-scorer">></button>
+  
+    <!-- Deslizador de Temporadas de Máximos Asistentes -->
+    <div class="slider-container">
+        
+        <div class="card-slider" [style.transform]="'translateX(' + currentAssistsSlideIndex * -100 + '%)'">
+            <div *ngFor="let type of assistsSeasons" class="card">
+                <h3>{{ type.name }} <span>🙌🏼</span></h3>
+                <p>{{ type.season }}</p>
+            </div>
+        </div> 
+    </div>
+    <button (click)="prevSlideAssists()" class="btn-slide left-assist" ><</button>
+    <button (click)="nextSlideAssists()" class="btn-slide right-assist">></button>
+</div>

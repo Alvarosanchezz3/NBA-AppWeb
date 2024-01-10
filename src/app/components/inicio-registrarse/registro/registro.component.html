@@ -1,0 +1,60 @@
+<div class="container">
+    <img src="/assets/images/nbaFondo2.jpg" alt="fondo" class="fondo" id="fondo"/>
+    <a class="volver" routerLink="/home"><img src="/assets/images/icons/arrow-back.svg">Volver al inicio</a>
+    <div class="login">
+        <div class="inicio">
+            <h1 id="titule">Regístrate</h1>
+            <p id="messaje" class="textos">Ingresa los datos para crear una cuenta</p>
+        </div>
+
+        <form #registroForm="ngForm" (ngSubmit)="registrarse()">
+            <div class="input-box">
+                <input type="text" placeholder="Usuario" [(ngModel)]="username" name="username" required minlength="4" #usuario="ngModel"/>
+                <img src="\assets\images\icons\users.svg" alt="user"/>
+            </div>
+            <div *ngIf="usuario.invalid && (usuario.dirty || usuario.touched)" class="error-div">
+                <div *ngFor="let error of usuario.errors | keyvalue">
+                    <p *ngIf="error.key === 'required'" class="error"><img src="\assets\images\icons\alert.svg" alt="alert-icon">El campo "Usuario" no puede estar vacío</p>
+                    <p *ngIf="error.key === 'minlength'" class="error"><img src="\assets\images\icons\alert.svg" alt="alert-icon">El campo "Usuario" debe tener 4 caracteres</p>
+                </div>
+            </div>
+          
+            <div class="input-box">
+                <input type="text" placeholder="Email" [(ngModel)]="email" name="email" required email #correo="ngModel"/>
+                <img src="\assets\images\icons\email.svg" alt="email"/>
+            </div>
+            <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="error-div">
+                <div *ngFor="let error of correo.errors | keyvalue">
+                    <p *ngIf="error.key === 'required'" class="error"><img src="\assets\images\icons\alert.svg" alt="alert-icon">El campo "Emal" no puede estar vacío</p>
+                    <p *ngIf="error.key === 'email'" class="error"><img src="\assets\images\icons\alert.svg" alt="alert-icon">El correo debe tener una &#64; para ser correcto</p>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <input type="password" placeholder="Contraseña" id="password" [(ngModel)]="password" name="password" required minlength="5" #contra="ngModel"/>
+                <img src="\assets\images\icons\eye-closed.svg" alt="eye" id="eyeIcon" (click)="togglePasswordVisibility()"/>
+            </div>
+            <div *ngIf="contra.invalid && (contra.dirty || contra.touched)" class="error-div">
+                <div *ngFor="let error of contra.errors | keyvalue">
+                    <p *ngIf="error.key === 'required'" class="error"><img src="\assets\images\icons\alert.svg" alt="alert-icon">El campo "Contraseña" no puede estar vacío</p>
+                    <p *ngIf="error.key === 'minlength'" class="error"><img src="\assets\images\icons\alert.svg" alt="alert-icon">El campo "Contraseña" debe tener 5 caracteres</p>
+                </div>
+            </div>
+        
+            <div class="remember-forgot">
+                <label id="remember">
+                  <input type="checkbox" [(ngModel)]="aceptoTerminos" name="aceptoTerminos" required/>
+                  Estoy de acuerdo con los términos y condiciones
+                </label>
+              </div>
+
+              <button [disabled]="!registroForm.form.valid || !aceptoTerminos" class="register-button">Registrarse</button>
+
+            <div class="registrer-link">
+                <p id="question_account">
+                ¿Ya tienes cuenta?<a routerLink="/inicioSesion">Inicia Sesión</a>
+                </p>
+            </div>   
+        </form>
+    </div>
+</div>

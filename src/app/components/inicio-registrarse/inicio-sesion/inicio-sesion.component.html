@@ -1,0 +1,46 @@
+<div class="container">
+    <img src="/assets/images/nbaFondo2.jpg" alt="fondo" class="fondo" id="fondo"/>
+    <a class="volver" routerLink="/home"><img src="/assets/images/icons/arrow-back.svg">Volver al inicio</a>
+    <div class="login">
+        <div class="inicio">
+            <h1 id="titule">Inicia sesión</h1>
+            <p id="messaje" class="textos">Por favor, ingresa tus credenciales para acceder</p>
+        </div>
+
+        <form (ngSubmit)="login()">
+            <div class="input-box">
+                <input type="text" placeholder="Usuario*" [(ngModel)]="username" name="username"
+                       required [ngModelOptions]="{standalone: true}" required autocomplete="username"/>
+                <img src="\assets\images\icons\users.svg" alt="user"/>
+            </div>
+
+            <div class="input-box">
+                <input type="password" placeholder="Contraseña*" id="password" [(ngModel)]="password" name="password"
+                       required [ngModelOptions]="{standalone: true}" required autocomplete="current-password"/>
+                <img src="\assets\images\icons\eye-closed.svg" alt="eye" id="eyeIcon" (click)="togglePasswordVisibility()"/>
+            </div>
+       
+            <div class="remember-forgot">
+                <label id="remember"><input type="checkbox"/>Recuérdame</label>
+                <a routerlink="/">¿Olvidaste la contraseña?</a>
+            </div>
+            
+            <p class="error" *ngIf="showError"><img src="\assets\images\icons\alert.svg" alt="alert-icon">Usuario o contraseña incorrectos</p> <!-- Mensaje de error cuando el usuario/contraseña son incorrectos con los de la BDD -->
+
+            <button>Entrar</button>
+
+            <div class="registrer-link">
+                <p id="question_account">
+                ¿No tienes cuenta?<a routerLink="/registro">Regístrate</a>
+                </p>
+            </div>
+
+            <div class="other-logs">
+                <a>
+                <img src="/assets/images/icons/google.svg" alt="Google"/>
+                <span>Inicia sesión con Google</span>
+                </a>
+            </div>    
+        </form>
+    </div>
+</div>

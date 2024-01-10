@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="container1" *ngIf="playersData?.results && playersData.results.length > 0">
+    <h1 class="title">Mayores asistentes</h1>
+    <table class="tabla-jugadores">
+      <thead>
+        <tr>
+          <th>Nombre del Jugador</th>  
+          <th>Equipo</th>  
+          <th>Asistencias</th>
+          <th>Partidos</th>
+          <th>Minutos jugados</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let player of playersData.results.slice(startIndex, endIndex)">
+          <td>{{ player.player_name }}</td>
+          <td>
+            <img src="assets/images/equiposNBA/{{ player.team }}.png" alt="{{ player.team }} Escudo" class="equipo-img">
+            <span>{{ player.team }}</span>
+          </td>
+          <td>{{ player.AST }}</td>
+          <td>{{ player.games }}</td>
+          <td>{{ player.minutes_played }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

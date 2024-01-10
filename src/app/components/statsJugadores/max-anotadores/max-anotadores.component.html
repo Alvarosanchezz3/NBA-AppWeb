@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="container1" *ngIf="playersData?.results && playersData.results.length > 0">
+    
+    <h1 class="title">Mayores anotadores</h1>
+    <table class="tabla-jugadores">
+      <thead>
+        <tr>
+          <th>Nombre del Jugador</th>  
+          <th>Equipo</th>  
+          <th>Puntos</th>
+          <th>Porcentaje de acierto</th>
+          <th>Porcentaje de triples</th>
+          <th>Partidos</th>
+          <th>Minutos jugados</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let player of playersData.results.slice(startIndex, endIndex)">
+          <td>{{ player.player_name }}</td>
+          <td>
+            <img src="assets/images/equiposNBA/{{ player.team }}.png" alt="{{ player.team }} Escudo" class="equipo-img">
+            <span>{{ player.team }}</span>
+          </td>
+          <td>{{ player.PTS }}</td>
+          <td>{{ player.field_percent }}</td>
+          <td>{{ player.three_percent }}</td>
+          <td>{{ player.games }}</td>
+          <td>{{ player.minutes_played }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <span (click)="prevPage()" *ngIf="currentPage !== 1"><</span>
+      <span *ngFor="let pageNumber of pageNumbers" (click)="goToPage(pageNumber)" [class.active]="pageNumber === activePage">
+        {{ pageNumber }}
+      </span>
+      <span (click)="nextPage()" *ngIf="currentPage !== totalPages">></span>
+    </div>
+</div>

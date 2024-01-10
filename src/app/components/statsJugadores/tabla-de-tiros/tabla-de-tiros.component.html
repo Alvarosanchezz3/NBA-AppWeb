@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+<div class="container1">
+  <div class="card-container">
+    <div class="card" *ngFor="let player of players" (click)="seleccionarJugador(player)">
+      <img [src]="player.photo" alt="{{ player.name }} Photo">
+      <h2>{{ player.name }}</h2>
+      <p>Edad: {{ player.age }} años</p>
+      <p>Peso: {{ player.weight }} kg</p>
+      <p>Altura: {{ player.height }}</p>
+      <img [src]="player.teamLogo" alt="{{ player.name }} Team Logo">
+    </div>
+  </div>
+
+  <div class="tabla-tiros" [class.active]="tablaTiro">
+    <h1 class="title">Últimos tiros de {{jugador}}</h1>
+    <table class="tabla-jugadores">
+        <thead>
+          <tr>
+            <th>Tiro</th>  
+            <th>Oponente</th>
+            <th>Distancia</th>
+            <th>Marcador</th>
+            <th>Cuarto</th>
+            <th>fecha</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr *ngFor="let player of playerData.results.slice(startIndex, endIndex)">
+            <td *ngIf="player.result" class="result-tiro"> 
+                <img src="assets/images/icons/tick.svg" alt="Éxito" class="icono-tiro"> Acertado        
+            </td>
+            <td *ngIf="!player.result" class="result-tiro">
+              <img src="assets/images/icons/cross.svg" alt="Fallo" class="icono-tiro"> Fallado
+            </td>
+
+              <td>{{ player.opponent }}</td>
+              <td>
+                {{ player.distance_ft }} {{ player.distance_ft === 1 ? 'pie' : 'pies' }}
+              </td>              
+              <td>{{ player.lebron_team_score }} - {{ player.opponent_team_score }}</td>
+              <td>{{ player.qtr }}</td>
+              <td>{{ player.date }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pagination">
+        <span (click)="prevPage()" *ngIf="currentPage !== 1"><</span>
+        <span *ngFor="let pageNumber of pageNumbers" (click)="goToPage(pageNumber)" [class.active]="pageNumber === activePage">
+          {{ pageNumber }}
+        </span>
+        <span (click)="nextPage()" *ngIf="currentPage !== totalPages">></span>
+      </div>
+  </div>
+</div>

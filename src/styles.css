@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+.container1 {
+    position: relative;
+    margin: 40px 60px 40px 60px;
+  }
+  
+  .title{
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: bolder;
+  }
+  
+  .tabla-jugadores {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tabla-jugadores th,
+  .tabla-jugadores td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .tabla-jugadores th:nth-child(1), .tabla-jugadores th:nth-child(2) {
+    background-color: #006bb7; 
+    color: #fff;
+  }
+  
+  .tabla-jugadores th:nth-child(n+3) {
+    background-color: #ed174b;
+    color: #fff; 
+  }
+  
+  .tabla-jugadores tr:nth-child(odd) {
+    background-color: #fff;
+  }
+  
+  .tabla-jugadores tr:nth-child(even) {
+    background-color: rgb(192, 192, 192);
+  }
+  
+  .equipo-img {
+    width: 40px;
+    vertical-align: middle; 
+    margin-right: 15px;
+  }
+  
+  .pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 30px 0px 30px 0px;
+  }
+  
+  .pagination span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .pagination span:hover:not(.active, span.disabled) {
+    background-color: #006bb7a4;
+    color: #fff;
+  }
+  
+  .pagination span.active {
+    background-color: #037dd4;
+    color: #fff;
+  }
+  
+  .pagination span.active:hover {
+    background-color: #0064ac;
+    color: #fff;
+  }
+  
+  .flecha {
+    font-size: 20px;
+  }
+  
+  @media only screen and (max-width: 1920px) {
+  
+    .title{
+      font-size: 35px;
+    }
+  
+    .tabla-jugadores th,
+    .tabla-jugadores td {
+      padding: 8px;
+    }  
+  }
+  
+  @media only screen and (max-width: 845px) {
+  
+  .container1 {
+    margin: 40px 40px 40px 40px;
+  
+  }
+  }

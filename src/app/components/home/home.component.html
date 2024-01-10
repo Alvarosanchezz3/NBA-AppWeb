@@ -1,0 +1,27 @@
+<div class="container-home">
+    <app-header></app-header>
+    <div class="banner">
+        <div class="image-container" [ngClass]="{'blurred-image': !isLoggedIn}">
+            <picture>
+                <source srcset="/assets/images/nbaFondo3.jpg" media="(max-width: 933px)" /> <!-- Se cambia la imagen cuando llega a ese ancho para que quede mejor -->
+                <img src="/assets/images/nbaFondo1.jpg" alt="banner">   
+            </picture>           
+        </div>
+        <div class="content">
+            <div *ngIf="isLoggedIn">
+                <h1 class="titulo">
+                    Bienvenido a la plataforma &#64;{{ username }} <br>
+                    <span class="subtitulo">¡Disfruta de las estadísticas!</span>
+                </h1>
+                
+                <a routerLink="/home" (click)="cerrarSesion()">Cerrar Sesion</a>
+            </div>
+            
+            <div *ngIf="!isLoggedIn">
+                <h1 class="titulo">Inicia sesión para acceder a las estadísticas</h1>
+                <a routerLink="/inicioSesion">Inicia Sesión</a>
+            </div>
+
+        </div>
+    </div>    
+</div>

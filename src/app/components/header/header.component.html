@@ -1,0 +1,40 @@
+<header>
+    <div class="team-icons">
+        <div *ngFor="let team of teamList">
+            <img [src]="team.imageSrc" [alt]="team.altText" class="icons"/>
+        </div>
+    </div>
+    <nav class="nav-list">
+        <div class="mobile-menu">
+            <img src="/assets/images/logoNBA.png" (click)="navigateToHome()" alt="logo" class="logo">
+
+            <div class="mobile2" [class.disabled]="!(isLoggedIn)">
+                <div class="search" [class.active]="isActive" >
+                    <img src="/assets/images/icons/lupa.svg" alt="lupa" [class.disabled]="!(isLoggedIn)" (click)="toggleSearch()">
+                    <input type="text" placeholder="Buscar jugador" class="search-input" [(ngModel)]="nombreJugador">
+                </div>
+                <a (click)="toggleMenu()" [class.disabled]="!(isLoggedIn)">&#9776;</a>
+            </div>
+
+        </div>
+
+        <ul class="nav-links" [class.show]="menuOpen">
+            <li><a (click)="navigateTo('/jugadores')" [class.disabled]="!(isLoggedIn)">Jugadores 2022/2023</a></li>
+            <li><a (click)="navigateTo('/anotadores')" [class.disabled]="!(isLoggedIn)">Mayores anotadores</a></li>
+            <li><a (click)="navigateTo('/asistentes')" [class.disabled]="!(isLoggedIn)">Mayores asistentes</a></li>
+          
+            <a routerLink="/home" class="logo" (click)="navigateToHome()">
+                <img src="/assets/images/logoNBA.png" alt="logo" class="logo">
+            </a>              
+          
+            <li><a (click)="navigateTo('/rebotadores')" [class.disabled]="!(isLoggedIn)">Mayores rebotadores</a></li>
+            <li><a (click)="navigateTo('/tablaDeTiros')" [class.disabled]="!(isLoggedIn)">Datos tabla de tiros</a></li>
+            <li><a (click)="navigateTo('/playOffs')" [class.disabled]="!(isLoggedIn)">Stats PlayOffs</a></li>
+          </ul>
+          
+    </nav>
+    <div class="buscador">
+        <img src="/assets/images/icons/lupa.svg" alt="lupa" [class.disabled]="!(isLoggedIn)" (click)="buscarJugador()">
+        <input type="text" placeholder="Buscar stats de jugador" [class.disabled]="!(isLoggedIn)" [(ngModel)]="nombreJugador">
+    </div>
+</header>
